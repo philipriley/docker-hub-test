@@ -2,19 +2,16 @@ version: '3.8'
 
 services:
   app:
-    image: funklid/scan-app
+    image: test/mytest
     build: 
       context: .
       dockerfile: Dockerfile
-    container_name: scan-app
+    container_name: mytest
     env_file:
       - .env
     expose:
      - "80"
     restart: always
-
-volumes:
-  mysql-data-SCAN-app:
 
 networks:
   default:

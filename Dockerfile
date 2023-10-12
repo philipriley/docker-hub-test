@@ -46,8 +46,7 @@ WORKDIR /var/www/html
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php && \
-    mv composer.phar /usr/local/bin/composer && \
-    ln -s /root/.composer/vendor/bin/drush /usr/local/bin/drush
+    mv composer.phar /usr/local/bin/composer 
 
 COPY scan-apache.conf /etc/apache2/sites-enabled/000-default.conf
 
@@ -57,7 +56,7 @@ FROM base as prod
 
 FROM base as dev
 
-Node latest LTS
+# Node latest LTS
 RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -;
 RUN apt-get update && apt-get install -y nodejs;
 
