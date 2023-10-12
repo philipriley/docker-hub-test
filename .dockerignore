@@ -1,0 +1,7 @@
+.git
+.github
+.vscode
+.env
+storage/logs
+storage/cache
+node_modules

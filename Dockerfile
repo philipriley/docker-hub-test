@@ -54,6 +54,9 @@ COPY package.json /var/www/html
 
 FROM base as prod
 
+# copy all files to /var/www/html
+COPY . /var/www/html
+
 FROM base as dev
 
 # Node latest LTS
@@ -62,7 +65,3 @@ RUN apt-get update && apt-get install -y nodejs;
 
 # Yarn
 RUN npm install --global yarn
-
-# Xdebug
-RUN pecl install xdebug
-COPY /90-xdebug.ini /usr/local/etc/php/conf.d
