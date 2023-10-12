@@ -48,7 +48,7 @@ WORKDIR /var/www/html
 RUN curl -sS https://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/composer 
 
-COPY scan-apache.conf /etc/apache2/sites-enabled/000-default.conf
+# COPY scan-apache.conf /etc/apache2/sites-enabled/000-default.conf
 
 COPY package.json /var/www/html
 
